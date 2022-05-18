@@ -3,10 +3,9 @@ import json
 from datetime import datetime
 import time
 import os
-import shutil
 
-api_id = 15911419
-api_hash = "f1e47a3de0595d329d9b143168612595"
+api_id = 9198879
+api_hash = "fedc8935a5d92e73f2d83696a5cceca6"
 menu = ''
 
 def cls():
@@ -41,7 +40,6 @@ def check_chat(chat_name):
             with open('store/check_chan.txt', "a", encoding="UTF-8") as f:
                 f.write(chat_name)
 
-
 # Добавление ботов.
 def menu_1():
     while True:
@@ -75,7 +73,7 @@ def menu_1():
         # Сценарий нового аккаунта
         else:
             # Создание сессии.
-            with Client(":memory:", api_id, api_hash, phone_number=phone_number) as app:
+            with Client(name='x', in_memory=True, api_id=api_id, api_hash=api_hash, phone_number=phone_number) as app:
                 # Создаем JSON формат бота
                 session_bot = app.export_session_string()
                 bots.append({
